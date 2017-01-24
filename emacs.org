@@ -1,0 +1,37 @@
+#+TITLE: GNU Emacs Reference Card
+
+#+BEGIN_CENTER
+(for version 25)
+#+END_CENTER
+
+* Starting Emacs
+
+To enter GNU Emacs 25, just type its name: ~emacs~
+
+* Leaving Emacs
+
+| suspend Emacs (or iconify it under X) | ~C-x~     |
+| exit Emacs permanently                | ~C-x C-c~ |
+
+* Files
+
+| *read* a file into Emacs                           | ~C-x C-f~ |
+| *save* a file back to disk                         | ~C-x C-s~ |
+| save *all* files                                   | ~C-x s~   |
+| *insert* contents of another file into this buffer | ~C-x i~   |
+| replace this file with the file you really want    | ~C-x C-v~ |
+| write buffer to a specified file                   | ~C-x C-w~ |
+| toggle read-only status of buffer                  | ~C-x C-q~ |
+
+* Getting Help
+
+The help system is simple. Type ~C-h~ (or ~F1~) and follow the
+direction. If you are a first-time user, type ~C-h t~ for a
+*tutorial*.
+
+| remove help window                       | ~C-x 1~ |
+| scroll help window                       | ~C-M-v~ |
+| apropos: show commands matching a string | ~C-h a~ |
+| describe the function a key runs         | ~C-h k~ |
+| describe a function                      | ~C-h f~ |
+| get mode-specific information            | ~C-h m~ |
