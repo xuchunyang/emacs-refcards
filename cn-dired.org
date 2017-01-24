@@ -1,0 +1,14 @@
+#+TITLE: Dired Reference Card
+
+#+BEGIN_CENTER
+（基于 GNU Emacs 25 的 Dired）\\
+有 (*DX*) 标记的命令来源于 dired-x
+#+END_CENTER
+
+* 标记文件以供删除
+
+| 标记数字化的备份文件 (numerical backup files[fn:1])（以 ~.~1~~, ~.~2~~ 等结尾）  | ~.~ |
+
+* Footnotes
+
+[fn:1] 这个概念在 [[info:emacs#Backup%20Names][info:emacs#Backup Names]] 中有介绍
