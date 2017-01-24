@@ -90,14 +90,13 @@ Commands marked with (*DX*) require dired-x
 
 *Unmark commands remove delete flags*
 
-| flag file for deletion                           | ~d~   |
-| flag all backup files (file names ending in ~~~) | ~~~   |
-| flag all auto-save files                         | ~#~   |
-| flag various intermediate files                  | ~% &~ |
-| *FIXME* flag numeric backups (ending in ?)       | ~.~   |
-| execute the deletions requested (flagged files)  | ~x~   |
-| flag files matching a regular expression         | ~% d~ |
-
+| flag file for deletion                               | ~d~   |
+| flag all backup files (file names ending in ~~~)     | ~~~   |
+| flag all auto-save files                             | ~#~   |
+| flag various intermediate files                      | ~% &~ |
+| flag numeric backups (ending in ~.~1~~, ~.~2~~, etc) | ~.~   |
+| execute the deletions requested (flagged files)      | ~x~   |
+| flag files matching a regular expression             | ~% d~ |
 
 * Regular Expression Commands
 
