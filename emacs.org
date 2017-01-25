@@ -35,3 +35,162 @@ direction. If you are a first-time user, type ~C-h t~ for a
 | describe the function a key runs         | ~C-h k~ |
 | describe a function                      | ~C-h f~ |
 | get mode-specific information            | ~C-h m~ |
+
+* Error Recovery
+
+| *abort* partially typed or executing command | ~C-g~                    |
+| *recover* files lost by a system crash       | ~M-x recover-session~    |
+| *undo* an unwanted change                    | ~C-x u~, ~C-_~, or ~C-/~ |
+| restore a buffer to its original contents    | ~M-x revert-buffer~      |
+| redraw garbaged screen                       | ~C-l~                    |
+
+* Incremental Search
+
+| search forward                    | ~C-s~   |
+| search backward                   | ~C-r~   |
+| regular expression search         | ~C-M-s~ |
+| reverse regular expression search | ~C-M-r~ |
+| select previous search string     | ~M-p~   |
+| select next search string         | ~M-n~   |
+| exit incremental search           | ~RET~   |
+| undo effect of last character     | ~DEL~   |
+| abort current search              | ~C-g~   |
+
+Use ~C-s~ or ~C-r~ again to repeat the search in either direction. If
+Emacs is still searching. ~C-g~ cancels only the port not matched.
+
+* Motion
+
+| entity to move over             | backward | forward |
+|---------------------------------+----------+---------|
+| character                       | ~C-b~    | ~C-f~   |
+| word                            | M-b      | M-f     |
+| line                            | C-p      | C-n     |
+| go to line beginning (or end)   | C-a      | C-e     |
+| sentence                        | M-a      | M-e     |
+| paragraph                       | M-{      | M-}     |
+| page                            | C-x [    | C-x ]   |
+| sexp                            | C-M-b    | C-M-f   |
+| function                        | C-M-a    | C-M-e   |
+| go to buffer beginning (or end) | M-<      | M->     |
+
+# FIXME: Try table.el instead
+# FIXME: Wrap key in ~KEY~
+
+| entity to move over                         |       |
+|---------------------------------------------+-------|
+| scroll to next screen                       | C-v   |
+| scroll to previous screen                   | M-v   |
+| scroll left                                 | C-x < |
+| scroll right                                | C-x > |
+| scroll current line to central, top, button | C-l   |
+| goto line                                   | M-g g |
+| goto char                                   | M-g c |
+| back to indentation                         | M-m   |
+
+* Killing and Deleting
+
+| entity to kill               | backward  | forward |
+|------------------------------+-----------+---------|
+| character (delete, not kill) | DEL       | C-d     |
+| word                         | M-DEL     | M-d     |
+| line (to end of)             | M-0 C-k   | C-k     |
+| sentence                     | C-x DEL   | M-k     |
+| sexp                         | M-- C-M-k | C-M-k   |
+
+| kill *region*                          | C-w        |
+| copy region to kill ring               | M-w        |
+| kill through next occurrence of /char/ | M-z /char/ |
+| yank back last thing killed            | C-y        |
+| replace last yank with previous kill   | M-y        |
+
+* Marking
+
+| set mark here             | C-@ or C-SPC |
+| exchange point and mark   | C-x C-x      |
+| set mark arg *words* away | M-@          |
+| mark *paragraph*          | M-h          |
+| mark *page*               | C-x C-p      |
+| mark *sexp*               | C-M-@        |
+| mark *function*           | C-M-h        |
+| mark entire *buffer*      | C-x h        |
+
+* Query Replace
+
+| Interactively replace a text string | M-%                      |
+| using regular expressions           | M-x query-replace-regexp |
+
+Valid responses in query-replace mode are
+
+| *replace* this one, go on to next      | SPC or y |
+| replace this one, don't move           | ,        |
+| *skip* to next without replacing       | DEL or n |
+| replace all remaining matches          | !        |
+| *back up* to the previous match        | ^        |
+| *exit* query-replace                   | RET      |
+| enter recursive edit (~C-M-C~ to exit) | C-r      |
+
+* Multiple Windows
+
+When two commands are shown, the second is a similar command for a
+frame instead of a window.
+
+|                                     | Window    | Frame     |
+|-------------------------------------+-----------+-----------|
+| delete all other windows            | C-x 1     | C-x 5 1   |
+| split window, above and below       | C-x 2     | C-x 5 2   |
+| split window, side by side          | C-x 3     |           |
+| scroll other window                 | C-M-v     |           |
+| switch cursor to another window     | C-x o     | C-x 5 o   |
+| select buffer in other window       | C-x 4 b   | C-x 5 b   |
+| display buffer in other window      | C-x 4 C-o | C-x 5 C-o |
+| find file in other window           | C-x 4 f   | C-x 5 f   |
+| find file read-only in other window | C-x 4 r   | C-x 5 r   |
+| run Dired in other window           | C-x 4 d   | C-x 5 d   |
+| find tag in other window            | C-x 4 .   | C-x 5 .   |
+| grow window taller                  | C-x ^     |           |
+| shrink window narrower              | C-x {     |           |
+| grow window wider                   | C-x }     |           |
+
+* Formatting
+
+| indent current *line* (mode-dependent)     | TAB     |
+| indent *region* (mode-dependent)           | C-M-\   |
+| indent *sexp* (mode-dependent)             | C-M-q   |
+| indent region rigidly /arg/ columns        | C-x TAB |
+| indent for comment                         | M-;     |
+| insert newline after point                 | C-o     |
+| move rest of line vertically down          | C-M-o   |
+| delete blank line around point             | C-x C-o |
+| join line with previous (with /arg/, next) | M-^     |
+| delete all white space around point        | M-\     |
+| put exactly one space at point             | M-SPC   |
+| fill paragraph                             | M-q     |
+| set fill columns to /arg/                  | C-x f   |
+| set prefix each line starts with           | C-x .   |
+| set face                                   | M-o     |
+
+* Case Change
+
+| uppercase word   | M-u     |
+| lowercase word   | M-l     |
+| capitalize word  | M-c     |
+| uppercase region | C-x C-u |
+| lowercase region | C-x C-l |
+
+* The Minibuffer
+
+The following keys are defined in the minibuffer.
+
+| complete as much as possible            | TAB |
+| complete up to one word                 | SPC |
+| complete and execute                    | RET |
+| show possible completion                | ?   |
+| fetch previous minibuffer input         | M-p |
+| fetch later minibuffer input or default | M-n |
+| regexp search backward through history  | M-r |
+| regexp search forward through history   | M-s |
+| abort command                           | C-g |
+
+Type ~C-x ESC ESC~ to edit and repeat the last command that used the
+minibuffer. Type ~F10~ to active menu bar items on text terminals.
