@@ -1,0 +1,19 @@
+#+TITLE: Magit Reference Card
+
+#+BEGIN_QUOTE
+From https://github.com/magit/magit/wiki/Cheatsheet
+#+END_QUOTE
+
+* TODO Section commands
+
+* TODO Buffer commands
+
+* TODO Various Common commands
+
+* TODO Various assorted commands
+
+* TODO Prefix command
+
+* TODO Apply changes
+
+* TODO Difing
