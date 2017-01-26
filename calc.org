@@ -5,3 +5,72 @@
 #+END_CENTER
 
 * Starting and Stopping
+
+| start/stop standard Calc | ~C-x * c~ |
+| start/stop X keypad calc | ~C-x * k~ |
+| start/stop either        | ~C-x * *~ |
+
+| stop standard Calc              | ~q~       |
+| Calc tutorial                   | ~C-x *t~  |
+| run Calc in other window        | ~C-x * o~ |
+| quick calculation in minibuffer | ~C-x * q~ |
+
+* Getting Help
+
+The ~h~ prefix key is Calc's analogue of ~C-h~ in Emacs.
+
+| quick summary of keys        | ~?~                |
+| describe key briefly         | ~h c~              |
+| describe key fully           | ~h k~              |
+| describe function or command | ~h f~              |
+| read Info manual             | ~h i~ or ~C-x * i~ |
+| read full Calc summary       | ~h s~ or ~C-x * s~ |
+
+* Error Recovery
+
+| abort command in progress     | ~C-h~            |
+| display recent error messages | ~v~              |
+| undo last operation           | ~U~              |
+| recall last arguments         | ~M-RET~          |
+| edit top of stack             | ~'~              |
+| reset Calc to initial state   | ~C-x * 0~ (zero) |
+
+* Transferring Data
+
+| grab region from a buffer       | ~C-x * g~ |
+| grab rectangle from a buffer    | ~C-x * r~ |
+| grab rectangle, summing columns | ~C-x * :~ |
+| grab rectangle, summing fows    | ~C-x * _~ |
+| yank data to a buffer           | ~C-x * y~ |
+
+Also, try ~C-k/C-y~ or X cut and paste.
+
+* Examples
+
+In RPN, enter numbers first, separated by ~RET~ if necessary, then
+type the operator.  To enter a calculation in algebraic form, press
+the apostrophe first.
+
+Examples:
+
+| RPN Style:          | algebraic style:    |
+| ~2 RET 3 +~         | ~' 2+3 RET~         |
+| ~2 RET 3 + 4 *~     | ~' (2+3)*4 RET~     |
+| ~2 RET 3 RET 4 + *~ | ~' 2*(3+4) RET~     |
+| ~3 RET 6 + Q 3 ^~   | ~' sqrt(3+5)^3 RET~ |
+| ~P 3 / n S~         | ~' sin(-pi/3) RET~  |
+
+* Arithmetic
+
+| add, subtract, multiply, divide         | +, -, *, / |
+| raise to a power, nth root              | ^, I ^     |
+| change sign                             | n          |
+| reciprocal 1/x                          | &          |
+| square root \sqrt{x} FIXME              | Q          |
+| set precision                           | p          |
+| round off last two digits               | c 2        |
+| convert to fraction, float              | c F, c f   |
+| enter using algebraic notation          | , 2+3*4    |
+| refer to previous result                | , $1*$2^2  |
+| finish alg entry without evaluation     | LFD        |
+| set mode when elg entry used by default | m a        |
