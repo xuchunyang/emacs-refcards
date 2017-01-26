@@ -62,15 +62,111 @@ Examples:
 
 * Arithmetic
 
-| add, subtract, multiply, divide         | +, -, *, / |
-| raise to a power, nth root              | ^, I ^     |
-| change sign                             | n          |
-| reciprocal 1/x                          | &          |
-| square root \sqrt{x} FIXME              | Q          |
-| set precision                           | p          |
-| round off last two digits               | c 2        |
-| convert to fraction, float              | c F, c f   |
-| enter using algebraic notation          | , 2+3*4    |
-| refer to previous result                | , $1*$2^2  |
-| finish alg entry without evaluation     | LFD        |
-| set mode when elg entry used by default | m a        |
+| add, subtract, multiply, divide         | ~+~, ~-~, ~*~, ~/~ |
+| raise to a power, nth root              | ~^~, ~I ^~         |
+| change sign                             | ~n~                |
+| reciprocal 1/x                          | ~&~                |
+| square root \sqrt{x} FIXME              | ~Q~                |
+| set precision                           | ~p~                |
+| round off last two digits               | ~c 2~              |
+| convert to fraction, float              | ~c F~, ~c f~       |
+| enter using algebraic notation          | ~, 2+3*4~          |
+| refer to previous result                | ~, $1*$2^2~        |
+| finish alg entry without evaluation     | ~LFD~              |
+| set mode when elg entry used by default | ~m a~              |
+
+* Stack Commands
+
+ Here S_n is the nth stack entry, and N is the size of the stack.
+
+| key     | no prefix     | prefix n        | prefix -n       |
+| ~RET~   | copy S_1      | copy S_1..n     | copy S_n        |
+| ~LFD~   | copy S_2      | copy S_n        | copy s_1..n     |
+| ~DEL~   | delete S_1    | delete S_1..n   | delete S_n      |
+| ~M-DEL~ | delete S_2    | delete S_n      | delete S_1..n   |
+| ~TAB~   | swap S_1↔S_2  | roll S_1 to S_n | roll S_n to S_N |
+| ~M-TAB~ | roll S3 to S2 | roll S_n to S_1 | roll S_N to S_n |
+
+With a 0 prefix, these copy, delete, or reverse the entire stack.
+
+* Display
+
+| scroll horizontaliy, vertically  | ~<~ ~>~, ~{~ ~}~ |
+| home cursor                      | ~o~              |
+| line numbers on/off              | ~d l~            |
+| trail display on/off             | ~t d~            |
+| scientific notation              | ~d s~            |
+| fixed-point notation             | ~d f~            |
+| floating-point (normal) notation | ~d n~            |
+| group digits with commas         | ~d g~            |
+
+For display mode commands, ~H~ prefix prevents screen redraw and ~I~
+prefix temporarily redraws top of stack.
+
+* Notation
+
+| scientific notation          | 6.02e23       |
+| minus sign in numeric entry  | _23 or 23 n   |
+| fractions                    | 3:4           |
+| complex numbers              | (x, y)        |
+| polar complex numbers        | (r, \theta)   |
+| vectors (commas optional)    | [1, 2, 3]     |
+| matrices (or nested vectors) | [1, 2; 3, 4]  |
+| error forms (~p~ key)        | 100 +/0 0.5   |
+| interval forms               | [2 .. 5]      |
+| modulo forms (~M~ key)       | 6 mod 24      |
+| HMS forms                    | 5@ 30' 0"     |
+| date forms                   | <Jul 4, 1992> |
+| infinity, indeterminate      | inf, nan      |
+
+* Scientific Functions
+
+| ln, log_10, log_b                 | ~L~, ~H L~, ~B~     |
+| exponential e^x, 10^x             | ~E~, ~H E~          |
+| sin, cos, tan                     | ~S~, ~C~, ~T~       |
+| arcsin, arccos, arctan            | ~I S~, ~I C~, ~I T~ |
+| inverse, hyperbolic prefix keys   | ~I~, ~H~            |
+| two-argument arctan               | ~f T~               |
+| degrees, radians modes            | ~m d~, ~m r~        |
+| pi (\pi)                          | ~P~                 |
+| factorial, double factorial       | ~!~, ~k d~          |
+| combinations, permutations        | ~k c~, ~H k c~      |
+| prime factorization               | ~k f~               |
+| next prime, previous prime        | ~k n~, ~I k n~      |
+| GCD, LCM                          | ~k g~, ~k l~        |
+| random number, shuffle            | ~k r~, ~k h~        |
+| minimum, maximum                  | ~f n~, ~f x~        |
+| error functions erf, erfc         | ~f e~, ~I f e~      |
+| gamma, beta functions             | ~f g~, ~f b~        |
+| incomplete gamma, beta function   | ~f G~, ~f B~        |
+| Bessel J_v, Y_v functions         | ~f j~, ~f y~        |
+| complex magnitude, arg, conjugate | ~A~, ~G~, ~J~       |
+| real, imaginary parts             | ~f r~, ~f i~        |
+| convert polar/rectangular         | ~c p~               |
+
+* TODO Financial Functions
+
+* TODO Units
+
+* TODO Programmer's Functions
+
+* TODO Variables
+
+* TODO Vector Operations
+
+* TODO Algebra
+
+* TODO Numerical Computations
+
+* TODO Selections
+
+* TODO Graphics
+
+* TODO Programming
+
+#+BEGIN_QUOTE
+Copyright \copy 2016 Free Software Foundation, Inc.
+
+Released under the terms of the GNU General Public License version 3
+or later.
+#+END_QUOTE
