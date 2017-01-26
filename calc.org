@@ -1,0 +1,7 @@
+#+TITLE: GNU Calc Reference Card
+
+#+BEGIN_CENTER
+(for GNU Emacs version 25)
+#+END_CENTER
+
+* Starting and Stopping
