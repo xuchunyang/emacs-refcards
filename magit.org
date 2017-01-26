@@ -1,19 +1,128 @@
 #+TITLE: Magit Reference Card
 
 #+BEGIN_QUOTE
-From https://github.com/magit/magit/wiki/Cheatsheet
+Copied from https://github.com/magit/magit/wiki/Cheatsheet
 #+END_QUOTE
 
-* TODO Section commands
+* Section commands
 
-* TODO Buffer commands
+These commands are for navigation and to change the visibility of
+sections.
 
-* TODO Various Common commands
+| Key                        | Description                                                       |
+|----------------------------+-------------------------------------------------------------------|
+| ~TAB~                      | toggle body of current section                                    |
+| ~C-<tab>~                  | cycle visibility of current section and its children              |
+| ~M-<tab>~                  | cycle visibility of all diff sections                             |
+| ~s-<tab>~                  | cycle visibility of all sections                                  |
+| ~1~, ~2~, ~3~, ~4~         | show surrounding sections up to level N, hide deeper levels       |
+| ~M-1~, ~M-2~, ~M-3~, ~M-4~ | globally show sections up to level N, hide deeper levels          |
+| ~^~                        | goto parent section                                               |
+| ~p~                        | goto beginning of section, from there to previous section         |
+| ~n~                        | goto next section                                                 |
+| ~M-p~                      | goto beginning of section, from there to previous sibling section |
+| ~M-n~                      | goto next sibling section                                         |
 
-* TODO Various assorted commands
+* Buffer commands
 
-* TODO Prefix command
+| Key     | Description                                                                     |
+|---------+---------------------------------------------------------------------------------|
+| ~g~     | refresh current buffer and status buffer, possibly revert file-visiting buffers |
+| ~G~     | refresh all Magit buffers and revert all file-visiting buffers in repository    |
+| ~q~     | bury the current Magit buffer, restoring previous window configuration          |
+| ~C-u q~ | kill the current Magit buffer, restoring previous window configuration          |
 
-* TODO Apply changes
+* Various common commands
 
-* TODO Difing
+| Key   | Description                                   |
+|-------+-----------------------------------------------|
+| ~SPC~ | scroll up (1)                                 |
+| ~DEL~ | scroll down (1)                               |
+| ~RET~ | show the thing at point in another buffer (2) |
+| ~j~   | jump somewhere (3)                            |
+| ~$~   | show output of recent calls to git            |
+
+- (1) In most Magit buffers this scrolls the current buffer.
+  In log buffers this instead scrolls the diff buffer shown
+  in another window.
+- (2) What is being shown depends on the context.
+- (3) Where this jumps to depends on the context.
+
+* Various assorted commands
+
+| Key     | Description                   |
+|---------+-------------------------------|
+| ~i~     | add a gitignore rule globally |
+| ~I~     | add a gitignore rule locally  |
+| ~x~     | reset using ~--mixed~         |
+| ~C-u x~ | reset using ~--hard~          |
+
+* Prefix commands
+
+These commands show popup buffers listing infix arguments and suffix
+commands.  Note that you don't have to remember all these prefixes
+initially - use ~h~ to show a popup listing all these prefixes as well
+as many (but not all) of the commands that are not prefixes
+themselves.
+
+| Key      | Description          |
+|----------+----------------------|
+| ~A~      | cherry-pick          |
+| ~b~      | branch               |
+| ~B~      | bisect               |
+| ~c~      | commit               |
+| ~d~      | diff                 |
+| ~E~      | ediff                |
+| ~f~      | fetch                |
+| ~F~      | pull                 |
+| ~h~, ~?~ | show popup of popups |
+| ~l~      | log                  |
+| ~m~      | merge                |
+| ~M~      | remote               |
+| ~o~      | submodule            |
+| ~P~      | push                 |
+| ~r~      | rebase               |
+| ~t~      | tag                  |
+| ~T~      | note                 |
+| ~V~      | revert               |
+| ~w~      | apply patches        |
+| ~C-u y~  | list refs (1)        |
+| ~z~      | stash                |
+| ~!~      | run git or gui tool  |
+
+- (1) Actually ~y~ is bound to a popup/prefix command, but it is one of
+  the few popups which default to a suffix command and therefor has to
+  be called with a prefix argument to actually show the popup buffer.
+
+* Applying changes
+
+| Key | Description                    |
+|-----+--------------------------------|
+| ~a~ | apply the change at point      |
+| ~k~ | discard the change at point    |
+| ~s~ | stage the change at point      |
+| ~S~ | stage all unstaged changes     |
+| ~u~ | unstage the change at point    |
+| ~U~ | unstage all staged changes (1) |
+| ~v~ | reverse the change at point    |
+
+- (1) Actually this asks for a commit to reset the index too.  If you
+  just press ~RET~, then what this equivalent to unstaging everything.
+  If that is to confusing then just bind this key to ~magit-unstage-all~.
+
+* Diffing
+
+These commands show diffs or manipulate the diff arguments used to
+generate the diffs in the current buffer.
+
+| Key   | Description                                   |
+|-------+-----------------------------------------------|
+| ~RET~ | (on commit) show commit                       |
+| ~RET~ | (on stash) show stash                         |
+| ~d~   | show diffing popup                            |
+| ~D~   | show popup for changing diff arguments        |
+| ~e~   | use ediff to stage, compare, or stage (dwim)  |
+| ~E~   | show ediffing popup (for when dwimming fails) |
+| ~+~   | show more context lines                       |
+| ~-~   | show less context lines                       |
+| ~0~   | show default amount of context lines (three)  |
