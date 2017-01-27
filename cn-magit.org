@@ -57,7 +57,38 @@
 | ~x~     | git reset 以 ~--mixed~                          |
 | ~C-u x~ | git reset 以 ~--hard~                           |
 
-* TODO Prefix commands
+* Prefix 命令
+
+这些命令弹出一个 Buffer 并列出参数和命令（你需要先选择参数，后选择命令）。注意最开始用不着记忆这些 prefix 命令 —— 按 ~h~ 会弹出一个 Buffer 列出它们。
+
+| Key      | Description          |
+|----------+----------------------|
+| ~A~      | cherry-pick          |
+| ~b~      | branch               |
+| ~B~      | bisect               |
+| ~c~      | commit               |
+| ~d~      | diff                 |
+| ~E~      | ediff                |
+| ~f~      | fetch                |
+| ~F~      | pull                 |
+| ~h~, ~?~ | show popup of popups |
+| ~l~      | log                  |
+| ~m~      | merge                |
+| ~M~      | remote               |
+| ~o~      | submodule            |
+| ~P~      | push                 |
+| ~r~      | rebase               |
+| ~t~      | tag                  |
+| ~T~      | note                 |
+| ~V~      | revert               |
+| ~w~      | apply patches        |
+| ~C-u y~  | list refs (1)        |
+| ~z~      | stash                |
+| ~!~      | run git or gui tool  |
+
+- (1) 事实上 ~y~ 也是一个 popup/prefix 命令，但它默认就执行一个 suffix
+  command，跳过了选择参数这一步。因此需要一个 prefix argument 来弹出
+  popup buffer。
 
 * TODO Applying changes
 
