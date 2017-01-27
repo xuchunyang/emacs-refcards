@@ -1,0 +1,64 @@
+#+TITLE: Magit Reference Card
+
+# 使用意译而不是直译
+
+#+BEGIN_QUOTE
+原文链接： https://github.com/magit/magit/wiki/Cheatsheet
+#+END_QUOTE
+
+* Section 命令
+
+以下的命令用来浏览 Section。
+
+| Key                        | Description                                                         |
+|----------------------------+---------------------------------------------------------------------|
+| ~TAB~                      | 显示或隐藏当前 section                                              |
+| ~C-<tab>~                  | 显示或隐藏当前 section 及其内层 section                             |
+| ~M-<tab>~                  | 显示或隐藏所有 diff section                                         |
+| ~s-<tab>~                  | 显示或隐藏所有 section                                              |
+| ~1~, ~2~, ~3~, ~4~         | 显示 N 层级的子 section，隐藏更深层级的子 section                   |
+| ~M-1~, ~M-2~, ~M-3~, ~M-4~ | 同上，但对所有的 section 有效                                       |
+| ~^~                        | 移动到上层 section                                                  |
+| ~p~                        | 移动到 section 的开头, 如果已经在开头了，移动到上一个 section       |
+| ~n~                        | 移动到下一个 section                                                |
+| ~M-p~                      | 移动到 section 的开头，如果已经在开头了，移动到上一个同层的 section |
+| ~M-n~                      | 移动到下一个同层的 section                                          |
+
+* Buffer 命令
+
+| Key     | Description                                                               |
+|---------+---------------------------------------------------------------------------|
+| ~g~     | 刷新当前 buffer 和 status buffer，有可能 revert file-visiting buffers     |
+| ~G~     | 刷新当前仓库中的所有 Magit buffers 并 revert 所有的 file-visiting buffers |
+| ~q~     | 隐藏 (bury) 当前的 Magit buffer, 恢复之前的 window configuration          |
+| ~C-u q~ | 关闭 (kill) 当前的 current Magit buffer，恢复之前的 window configuration  |
+
+* 常用命令
+
+| Key   | Description                            |
+|-------+----------------------------------------|
+| ~SPC~ | 向前滚屏 (1)                           |
+| ~DEL~ | 向后滚屏 (1)                           |
+| ~RET~ | 在另一个 buffer 中显示光标下的东西 (2) |
+| ~j~   | 跳到某处（这是一个 prefix key） (3)    |
+| ~$~   | 显示最近调用 git 的输出                |
+
+- (1) 在多数 Magit buffer 中，在当前 buffer 中滚屏。在 Magit log
+  buffer 中，滚动的是另一个 window 中的 diff buffer。
+- (2) 什么会被显示取决于 context。
+- (3) 跳到哪里取决于 context。(FIXME: @xuchunyang: 我明白这是什么意思，可能需要咨询)
+
+* 其它命令
+
+| Key     | Description                                     |
+|---------+-------------------------------------------------|
+| ~i~     | 在 GIT_DIR/.gitignore 添加一条 gitignore 规则   |
+| ~I~     | 在 GIT_DIR/info/exclude 添加一条 gitignore 规则 |
+| ~x~     | git reset 以 ~--mixed~                          |
+| ~C-u x~ | git reset 以 ~--hard~                           |
+
+* TODO Prefix commands
+
+* TODO Applying changes
+
+* TODO Diffing
