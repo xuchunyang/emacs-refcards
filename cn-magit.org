@@ -40,13 +40,13 @@
 | ~SPC~ | 向前滚屏 (1)                           |
 | ~DEL~ | 向后滚屏 (1)                           |
 | ~RET~ | 在另一个 buffer 中显示光标下的东西 (2) |
-| ~j~   | 跳到某处（这是一个 prefix key） (3)    |
+| ~j~   | 跳到某处 (3)     |
 | ~$~   | 显示最近调用 git 的输出                |
 
 - (1) 在多数 Magit buffer 中，在当前 buffer 中滚屏。在 Magit log
   buffer 中，滚动的是另一个 window 中的 diff buffer。
 - (2) 什么会被显示取决于 context。
-- (3) 跳到哪里取决于 context。(FIXME: @xuchunyang: 我明白这是什么意思，可能需要咨询)
+- (3) 跳到哪里取决于 context。并且它也可能是一个 prefix key。
 
 * 其它命令
 
@@ -90,6 +90,32 @@
   command，跳过了选择参数这一步。因此需要一个 prefix argument 来弹出
   popup buffer。
 
-* TODO Applying changes
+* Applying changes
 
-* TODO Diffing
+| Key | Description                |
+|-----+----------------------------|
+| ~a~ | 应用光标下的修改           |
+| ~k~ | 废弃光标下的修改           |
+| ~s~ | stage 光标下的修改         |
+| ~S~ | stage 所有 unstaged 的修改 |
+| ~u~ | unstage 光标下的修改       |
+| ~U~ | unstage 所有 staged 的修改 |
+| ~v~ | reverse 光标下的修改       |
+
+* Diffing
+
+以下命令显示 diff 或调整生成当前 buffer 中的 diff 的 diff 程序参数。
+
+| Key   | Description                                  |
+|-------+----------------------------------------------|
+| ~RET~ | (光标在 commit 上) 显示 commit               |
+| ~RET~ | (光标在 stash 上) 显示 stash                 |
+| ~d~   | 显示 diffing popup                           |
+| ~D~   | 显示用来修改 diff 参数的 popup               |
+| ~e~   | 用 efiff 来 stage, compare, or stage (dwim)  |
+| ~E~   | 显示 ediffing popup (当 dwimming 失败时使用) |
+| ~+~   | 显示更多的上下文                             |
+| ~-~   | 显示更少的上下文                             |
+| ~0~   | 显示默认的行数的上下文（3 行）               |
+
+
