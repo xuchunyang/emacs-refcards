@@ -5,10 +5,122 @@
 有 (*DX*) 标记的命令来源于 dired-x
 #+END_CENTER
 
-* 标记文件以供删除
+* 启动和退出 Dired
 
-| 标记数字化的备份文件 (numerical backup files[fn:1])（以 ~.~1~~, ~.~2~~ 等结尾）  | ~.~ |
+| 启动 dired                 | ~C-x d~          |
+| dired 你当前编辑文件的目录 | ~C-x C-j~ (*DX*) |
+| 退出 dired                 | ~q~              |
 
-* Footnotes
+* 移动命令
 
-[fn:1] 这个概念在 [[info:emacs#Backup%20Names][info:emacs#Backup Names]] 中有介绍
+| 移动到上一行             | ~p~     |
+| 移动到下一行             | ~n~     |
+| 移动到上一个目录         | ~<~     |
+| 移动到下一个目录         | ~>~     |
+| 移动到上一个已标记的文件 | ~M-{~   |
+| 移动到下一个已标记的文件 | ~M-}~   |
+| 移动到上一个字目录       | ~C-M-p~ |
+| 移动到下一个字目录       | ~C-M~n~ |
+| 移动到父目录             | ~^~     |
+| 移动到第一个字目录       | ~C-M-d~ |
+
+* 鼠标命令
+
+| 打开文件或目录 | ~Mouse_Button_2~ |
+
+* Immediate Actions on Files
+
+| 打开当前文件                               | ~f~ |
+| 查看（以只读模式打开）文件                 | ~v~ |
+| 在其它窗口中打开当前文件                   | ~o~ |
+| 创建一个新字目录                           |     |
+| 拿光标下的文件已标记的文件 diff            | ~=~ |
+
+* TODO Marking and Unmarking Files
+
+| mark a file or subdirectory for later commands  | ~m~           |
+| unmark a file or all files of a subdirectory    | ~u~           |
+| unmark all marked files in a buffer             | ~M-delete~    |
+| mark files with a give extension                | ~* .~         |
+| mark all directories                            | ~* /~         |
+| mark all symlinks                               | ~* @~         |
+| mark all executables                            | ~* *~         |
+| invert marking                                  | ~t~           |
+| mark all files in the current subdir            | ~* s~         |
+| mark file names matching a regular expression   | ~* %~         |
+| change the marks to a different character       | ~* c~         |
+| mark files for which Elisp expression returns t | ~* (~ (*DX*)) |
+
+* TODO Modifying the Dired Buffer
+
+| insert a subdirectory into this buffer        | ~i~     |
+| remove marked files from the listing          | ~k~     |
+| remove a subdir listing                       | ~C-u k~ |
+| re-read all directories (retains all marks)   | ~g~     |
+| toggle sorting of current subdir by name/date | ~s~     |
+| edit ls switches                              | ~C-u s~ |
+| recover marks, hidden lines, and such (undo)  | ~C-_~   |
+| hide all subdirectories                       | ~M-$~   |
+| hide or unhide subdirectory                   | ~$~     |
+
+* TODO Commands on Files Marked or Specified by the Prefix
+
+| copy file(s)                                     | ~C~        |
+| rename a file or move files to another directory | ~R~        |
+| change ownership of file(s)                      | ~O~        |
+| change the group of the file(s)                  | ~G~        |
+| change mode of file(s)                           | ~M~        |
+| print file(s)                                    | ~P~        |
+| convert filename(s) to lower case                | ~% l~      |
+| convert filename(s) to upper case                | ~% u~      |
+| delete marked (as opposed to flagged) file(s)    | ~D~        |
+| compress or uncompress file(s)                   | ~Z~        |
+| run info on file                                 | ~I~ (*DX*) |
+| make symbolic link(s)                            | ~S~        |
+| mark relative symbolic link(s)                   | ~Y~        |
+| mark hard link(s)                                | ~H~        |
+| search file for a regular expression             | ~A~        |
+| regexp query replace on marked files             | ~Q~        |
+| byte-compile file(s)                             | ~B~        |
+| load file(s)                                     | ~L~        |
+| shell command on file(s)                         | ~!~        |
+| asynchronous shell command on file(s)            | ~&~        |
+
+* TODO Flagging Files for Deletion
+
+*Unmark commands remove delete flags*
+
+| flag file for deletion                               | ~d~   |
+| flag all backup files (file names ending in ~~~)     | ~~~   |
+| flag all auto-save files                             | ~#~   |
+| flag various intermediate files                      | ~% &~ |
+| flag numeric backups (ending in ~.~1~~, ~.~2~~, etc) | ~.~   |
+| execute the deletions requested (flagged files)      | ~x~   |
+| flag files matching a regular expression             | ~% d~ |
+
+* TODO Regular Expression Commands
+
+| mark filenames matching a regular expression | ~% m~ |
+| copy marked files by regexp                  | ~% C~ |
+| rename marked files by regexp                | ~% R~ |
+| hardlink                                     | ~% H~ |
+| symlink                                      | ~% S~ |
+| symlink, with relative paths                 | ~% Y~ |
+| mark for deletion                            | ~% d~ |
+
+* TODO Dired and Find
+
+| dired file(s) whose name matches a pattern | ~M-x find-name-dired~ |
+| dired file(s) that contain pattern         | ~M-x find-grep-dired~ |
+| dired file(s) based on find output         | ~M-x find-dired~      |
+
+* 获取帮助
+
+| dired 帮助           | ~h~ |
+| dired 概要和错误日志 | ~?~ |
+
+#+BEGIN_CENTER
+Copyright © 2016 Free Software Foundation, Inc.\\
+For GNU Emacs version 25\\
+Originally written May 2000 by Evgeny Roubinchtein.
+#+END_CENTER
