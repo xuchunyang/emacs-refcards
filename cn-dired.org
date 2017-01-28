@@ -28,63 +28,63 @@
 
 | 打开文件或目录 | ~Mouse_Button_2~ |
 
-* Immediate Actions on Files
+* 立即操作文件的功能
 
-| 打开当前文件                               | ~f~ |
-| 查看（以只读模式打开）文件                 | ~v~ |
-| 在其它窗口中打开当前文件                   | ~o~ |
-| 创建一个新字目录                           |     |
-| 拿光标下的文件已标记的文件 diff            | ~=~ |
+| 打开当前文件                    | ~f~ |
+| 查看（以只读模式打开）文件      | ~v~ |
+| 在其它窗口中打开当前文件        | ~o~ |
+| 创建一个新字目录                | ~+~ |
+| 拿光标下的文件已标记的文件 diff | ~=~ |
 
-* TODO Marking and Unmarking Files
+* 标记和取消标记文件
 
-| mark a file or subdirectory for later commands  | ~m~           |
-| unmark a file or all files of a subdirectory    | ~u~           |
-| unmark all marked files in a buffer             | ~M-delete~    |
-| mark files with a give extension                | ~* .~         |
-| mark all directories                            | ~* /~         |
-| mark all symlinks                               | ~* @~         |
-| mark all executables                            | ~* *~         |
-| invert marking                                  | ~t~           |
-| mark all files in the current subdir            | ~* s~         |
-| mark file names matching a regular expression   | ~* %~         |
-| change the marks to a different character       | ~* c~         |
-| mark files for which Elisp expression returns t | ~* (~ (*DX*)) |
+| 标记文件或子目录                                     | ~m~           |
+| 取消标记文件，如果是子目录，则取消标记其下的所有文件 | ~u~           |
+| 取消标记 buffer 中的所有标记                         | ~M-delete~    |
+| 按文件扩展名标记文件                                 | ~* .~         |
+| 标记所有的目录                                       | ~* /~         |
+| 标记所有的 symlink                                   | ~* @~         |
+| 标记所有的可执行文件                                 | ~* *~         |
+| 标记所有未标记的，取消所有已标记的                   | ~t~           |
+| 标记当前子目录下的所有文件                           | ~* s~         |
+| 按正则表达式标记文件                                 | ~* %~         |
+| 修改标记符号                                         | ~* c~         |
+| 按 Elisp 表达式的结果是否返回 t 来标记               | ~* (~ (*DX*)) |
 
-* TODO Modifying the Dired Buffer
+* 修改 Dired buffer
 
-| insert a subdirectory into this buffer        | ~i~     |
-| remove marked files from the listing          | ~k~     |
-| remove a subdir listing                       | ~C-u k~ |
-| re-read all directories (retains all marks)   | ~g~     |
-| toggle sorting of current subdir by name/date | ~s~     |
-| edit ls switches                              | ~C-u s~ |
-| recover marks, hidden lines, and such (undo)  | ~C-_~   |
-| hide all subdirectories                       | ~M-$~   |
-| hide or unhide subdirectory                   | ~$~     |
+| 插入一个子目录                       | ~i~     |
+| 隐藏已标记的文件                     | ~k~     |
+| 隐藏一个子目录                       | ~C-u k~ |
+| 刷新，重新读取目录（保留所有的标记） | ~g~     |
+| 在按名称和时间排序之间切换           | ~s~     |
+| 修改 ls 选项                         | ~C-u s~ |
+| 复原标记和被隐藏的行等等 (undo)      | ~C-_~   |
+| 隐藏所有的子目录                     | ~M-$~   |
+| 隐藏或显示子目录                     | ~$~     |
 
-* TODO Commands on Files Marked or Specified by the Prefix
+* 对已标记了的文件（或按 Prefix Argument 指定）执行命令
 
-| copy file(s)                                     | ~C~        |
-| rename a file or move files to another directory | ~R~        |
-| change ownership of file(s)                      | ~O~        |
-| change the group of the file(s)                  | ~G~        |
-| change mode of file(s)                           | ~M~        |
-| print file(s)                                    | ~P~        |
-| convert filename(s) to lower case                | ~% l~      |
-| convert filename(s) to upper case                | ~% u~      |
-| delete marked (as opposed to flagged) file(s)    | ~D~        |
-| compress or uncompress file(s)                   | ~Z~        |
-| run info on file                                 | ~I~ (*DX*) |
-| make symbolic link(s)                            | ~S~        |
-| mark relative symbolic link(s)                   | ~Y~        |
-| mark hard link(s)                                | ~H~        |
-| search file for a regular expression             | ~A~        |
-| regexp query replace on marked files             | ~Q~        |
-| byte-compile file(s)                             | ~B~        |
-| load file(s)                                     | ~L~        |
-| shell command on file(s)                         | ~!~        |
-| asynchronous shell command on file(s)            | ~&~        |
+| 复制文件                                            | ~C~        |
+| 重命名或移动文件                                    | ~R~        |
+| 改变文件的所有权 (ownership)                        | ~O~        |
+| 改变文件的分组 (group)                              | ~G~        |
+| 改变文件的 mode                                     | ~M~        |
+| 打印机打印文件                                      | ~P~        |
+| 小写化文件名                                        | ~% l~      |
+| 大写化文件名                                        | ~% u~      |
+| 删除已经标记的文件                                  | ~D~        |
+| 压缩或解压文件                                      | ~Z~        |
+| 用 info 运行文件                                    | ~I~ (*DX*) |
+| 创建 symbolic links(s)                              | ~S~        |
+| 创建 relative symbolic link(s)                      | ~Y~        |
+| 创建 hard link(s)                                   | ~H~        |
+| 用正则表达式搜索已标记的文件                        | ~A~        |
+| 用正则表达式搜索并替换 (query-replace) 已标记的文件 | ~Q~        |
+| byte-compile 文件 (Elisp)                           | ~B~        |
+| 加载文件 (Elisp)                                    | ~L~        |
+| 以标记的文件为参数，执行 shell 命令                 | ~!~        |
+| 同上，但以异步的形式                                | ~&~        |
 
 * TODO Flagging Files for Deletion
 

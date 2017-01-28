@@ -77,9 +77,9 @@ Commands marked with (*DX*) require dired-x
 | compress or uncompress file(s)                   | ~Z~        |
 | run info on file                                 | ~I~ (*DX*) |
 | make symbolic link(s)                            | ~S~        |
-| mark relative symbolic link(s)                   | ~Y~        |
-| mark hard link(s)                                | ~H~        |
-| search file for a regular expression             | ~A~        |
+| make relative symbolic link(s)                   | ~Y~        |
+| make hard link(s)                                | ~H~        |
+| search files for a regular expression            | ~A~        |
 | regexp query replace on marked files             | ~Q~        |
 | byte-compile file(s)                             | ~B~        |
 | load file(s)                                     | ~L~        |
