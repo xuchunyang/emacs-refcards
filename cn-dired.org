@@ -86,33 +86,33 @@
 | 以标记的文件为参数，执行 shell 命令                 | ~!~        |
 | 同上，但以异步的形式                                | ~&~        |
 
-* TODO Flagging Files for Deletion
+* 标记文件以供删除
 
-*Unmark commands remove delete flags*
+*取消标记的命令也会取消删除标记*
 
-| flag file for deletion                               | ~d~   |
-| flag all backup files (file names ending in ~~~)     | ~~~   |
-| flag all auto-save files                             | ~#~   |
-| flag various intermediate files                      | ~% &~ |
-| flag numeric backups (ending in ~.~1~~, ~.~2~~, etc) | ~.~   |
-| execute the deletions requested (flagged files)      | ~x~   |
-| flag files matching a regular expression             | ~% d~ |
+| 标记文件以供删除                                              | ~d~   |
+| 标记所有备份文件（文件名以 ~~~ 结尾）                         | ~~~   |
+| 标记所有 auto-save 的文件                                     | ~#~   |
+| 标记各种各样的中间文件                                        | ~% &~ |
+| 标记 Emacs 数字化的备份文件（文件名以 ~.~1~~, ~.~2~~ 等结尾） | ~.~   |
+| 执行删除请求（已经有删除标记的文件）                          | ~x~   |
+| 标记匹配正则表达式的文件                                      | ~% d~ |
 
-* TODO Regular Expression Commands
+* 用到正则表达式的命令
 
-| mark filenames matching a regular expression | ~% m~ |
-| copy marked files by regexp                  | ~% C~ |
-| rename marked files by regexp                | ~% R~ |
-| hardlink                                     | ~% H~ |
-| symlink                                      | ~% S~ |
-| symlink, with relative paths                 | ~% Y~ |
-| mark for deletion                            | ~% d~ |
+| 标记匹配正则表达式的文件                       | ~% m~ |
+| 复制已标记的文件中匹配正则表达式的文件         | ~% C~ |
+| 重命名（移动）已标记文件中匹配正则表达式的文件 | ~% R~ |
+| hardlink                                       | ~% H~ |
+| symlink                                        | ~% S~ |
+| symlink, with relative paths                   | ~% Y~ |
+| 给匹配正则表达式的文件添加删除标记             | ~% d~ |
 
-* TODO Dired and Find
+* Dired 和 Find
 
-| dired file(s) whose name matches a pattern | ~M-x find-name-dired~ |
-| dired file(s) that contain pattern         | ~M-x find-grep-dired~ |
-| dired file(s) based on find output         | ~M-x find-dired~      |
+| 用 Dired 列出文件名匹配某个 wildcard 的文件 | ~M-x find-name-dired~ |
+| 用 Dired 列出文件内容匹配某个 regexp 的文件 | ~M-x find-grep-dired~ |
+| 用 Dired 累出 find 的结果                   | ~M-x find-dired~      |
 
 * 获取帮助
 
